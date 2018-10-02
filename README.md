@@ -17,3 +17,13 @@
 * Зарегистрироваться через учетную запись Github на https://travis-ci.org/
 * Включить в настройках галочку для соответсвующего репозитория-форка
 * Включить галочку на проверку pull-requests
+
+
+### Обновление форка
+
+```
+    git remote add upstream https://github.com/Geschoss/fintech-front.git
+    git fetch upstream
+    git checkout master
+    git merge upstream/master
+```
