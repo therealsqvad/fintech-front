@@ -27,3 +27,14 @@
     git checkout master
     git merge upstream/master
 ```
+
+### Обновление ветки
+
+```
+    git checkout /Ваша ветка/
+    git rebase master
+```
+Правим конфликры и дальше 
+```
+    git rebase --continue
+```

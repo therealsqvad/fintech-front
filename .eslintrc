@@ -57,7 +57,7 @@
       "new-parens": 1,
       "class-methods-use-this": 1,
       "no-return-assign": 1,
-      "no-plusplus": [1, { "allowForLoopAfterthoughts": true }],
+      "no-plusplus": 0,
       "no-restricted-properties": 1, // включить
       "one-var": [
         1,
