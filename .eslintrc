@@ -32,7 +32,7 @@
       ],
       "no-restricted-imports": [1,  "lodash", "crypto", "bluebird", "setimmediate2"],
       "no-var": 2,
-      "no-loop-func": 1,
+      "no-loop-func": 0,
       "no-shadow": 1,
       "vars-on-top": 0,
       "jsx-a11y/href-no-hash": 0,
@@ -118,7 +118,7 @@
           "props": false
         }
       ],
-      "no-console": 1,
+      "no-console": 0,
       "curly": [
         2,
         "all"
