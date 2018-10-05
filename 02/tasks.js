@@ -43,6 +43,14 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
+  if (arguments.length > 0) {
+    return (y) => {
+      if (y!==undefined) {
+        return sum(x+y)
+      }
+      return x;
+    }
+  }
   return 0;
 }
 
@@ -67,7 +75,8 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  return [];
+  arr.sort((a, b) => a-b);
+  return Array.from(new Set(arr));
 }
 
 /**
