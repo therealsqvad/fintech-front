@@ -63,9 +63,25 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-  return false;
-}
+  let isAnagram = false;
+  first.toLowerCase;
+  second.toLowerCase;
 
+  let arrOfFirst = [...first];
+  let arrOfSecond = [...second];
+  arrOfFirst.sort();
+  arrOfSecond.sort();
+  for (let i =0; i<=arrOfFirst.length && arrOfFirst.length === arrOfSecond.length; i++) {
+    if (arrOfFirst[i]===arrOfSecond[i]) {
+      isAnagram=true;
+    } 
+    else {
+      isAnagram=false;
+      break;
+    }
+  }
+  return isAnagram;
+}
 /*= ============================================ */
 
 /**
