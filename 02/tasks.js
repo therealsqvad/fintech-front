@@ -23,11 +23,8 @@ function timer(logger = console.log) {
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-  const oldArgs = args;
-
-  return function() {
-    const newArg = [].slice.call(arguments);
-    const Args = [].concat(oldArgs, newArg);
+  return function(...newArgs) {
+    const Args = args.concat(newArgs);
 
     return func.apply(context, Args);
   };
@@ -43,17 +40,16 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-  if (arguments.length > 0) {
-    return y => {
-      if (y !== undefined) {
-        return sum(x + y);
-      }
-      return x;
-    };
+  if (arguments.length === 0) {
+    return 0;
   }
-  return 0;
+  return y => {
+    if (y !== undefined) {
+      return sum(x + y);
+    }
+    return x;
+  };
 }
-
 /*= ============================================ */
 
 /**
@@ -65,8 +61,8 @@ function sum(x) {
 function anagram(first, second) {
   let isAnagram = false;
 
-  const firstLower = first.toLowerCase;
-  const secondLower = second.toLowerCase;
+  const firstLower = first.toLowerCase();
+  const secondLower = second.toLowerCase();
 
   const arrOfFirst = [...firstLower];
   const arrOfSecond = [...secondLower];
@@ -129,14 +125,17 @@ function getIntersection(first, second) {
  * @return {boolean}
  */
 function isIsomorphic(left, right) {
+  if (left.length !== right.length) {
+    return false;
+  }
   let countReplace = 0;
 
-  for (let i = 0; i <= left.length && left.length === right.length; i++) {
+  for (let i = 0; i <= left.length; i++) {
     if (left[i] !== right[i]) {
       countReplace++;
     }
   }
-  if (countReplace > 1 || left.length !== right.length) {
+  if (countReplace > 1) {
     return false;
   }
 
