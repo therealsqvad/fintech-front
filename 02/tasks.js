@@ -6,6 +6,9 @@
  * Исправьте проблему с таймером: должны выводиться числа от 0 до 9.
  * Доп. задание: предложите несколько вариантов решения.
  */
+
+/* Решение через let */
+
 function timer(logger = console.log) {
   for (let i = 0; i < 10; i++) {
     setTimeout(() => {
@@ -13,6 +16,18 @@ function timer(logger = console.log) {
     }, 100);
   }
 }
+
+/* Решение через функцию */
+/* function timer(logger = console.log) {
+  for (var i = 0; i < 10; i++) {
+    setTimeout((function(j) {
+      return () => {
+        logger(j);
+      };
+    }(i)), 100);
+  }
+} */
+
 /*= ============================================ */
 
 /**
