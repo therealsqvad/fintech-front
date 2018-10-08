@@ -4,10 +4,10 @@
   "description": "Homeworks for frontend part of tinkoff fintech school",
   "main": "index.js",
   "scripts": {
-    "test": "npm run unit-tests && npm run lint && npm run lint-css && npm run lint-html",
-    "lint": "eslint */*.js",
+    "test": "npm run unit-tests && npm run lint",
+    "lint": "eslint additionalHomeWork02/*.js",
     "lint-css": "stylelint *.less",
-    "unit-tests": "mocha --reporter=spec */test.js"
+    "unit-tests": "mocha --reporter=spec */tests.js"
   },
   "husky": {
     "hooks": {
