@@ -97,7 +97,8 @@ function whoIsNext(names, r) {
     j = 0,
     jMax = names.length - 1;
 
-  while (len < r) {
+  r--;
+  while (len <= r) {
     len += Math.pow(2, i);
     if (r < len) {
       break;
