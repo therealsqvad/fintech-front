@@ -24,23 +24,22 @@ function pickPeaks(arr) {
     plat = [];
 
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i - 1] < arr[i]) {
+    if (arr[i - 1] < arr[i] || (arr[i - 1] === arr[i] && plat.length > 0)) {
       if (arr[i + 1] === arr[i]) {
         plat.push(i);
       } else if (arr[i + 1] < arr[i]) {
-        pos.push(i);
-        peaks.push(arr[i]);
-      }
-    } else if (plat.length > 0) {
-      if (arr[i + 1] < arr[i]) {
-        pos.push(plat[0]);
-        peaks.push(arr[plat[0]]);
-        plat = [];
-      } else {
-        plat = [];
+        if (plat.length > 0) {
+          pos.push(plat[0]);
+          peaks.push(arr[plat[0]]);
+          plat = [];
+        } else {
+          pos.push(i);
+          peaks.push(arr[i]);
+        }
       }
     }
   }
+
 
   return {
     pos,
