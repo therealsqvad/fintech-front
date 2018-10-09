@@ -36,6 +36,9 @@ describe('Additional homework of Lesson 2', () => {
       expect(
         whoIsNext(['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard'], 7230702951)
       ).to.eql('Leonard');
+      expect(
+        whoIsNext(['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard'], 51)
+      ).to.eql('Leonard');
     });
   });
 });
