@@ -10,7 +10,7 @@ function promiseAll(promises) {
     const promiseOk = [];
     let currentLength = promises.length;
 
-    if (promises.length === 0) {
+    if (currentLength === 0) {
       res(promiseOk);
     }
     for (let i = 0; i < promises.length; i++) {
