@@ -13,7 +13,7 @@ function promiseAll(promises) {
     if (currentLength === 0) {
       res(promiseOk);
     }
-    for (let i = 0; i < promises.length; i++) {
+    for (let i = 0; i < currentLength; i++) {
       promises[i].then(resolve => {
         promiseOk[i] = resolve;
         currentLength--;
