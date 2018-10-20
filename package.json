@@ -4,10 +4,9 @@
   "description": "Homeworks for frontend part of tinkoff fintech school",
   "main": "index.js",
   "scripts": {
-    "test": "npm run unit-tests && npm run lint && npm run lint-css && npm run lint-html",
+    "test": "npm run lint",
     "lint": "eslint */*.js",
-    "lint-css": "stylelint *.less",
-    "unit-tests": "mocha --reporter=spec */test.js"
+    "lint-css": "stylelint *.less"
   },
   "author": "",
   "license": "ISC",
