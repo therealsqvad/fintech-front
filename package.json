@@ -9,11 +9,6 @@
     "lint-css": "stylelint *.less",
     "unit-tests": "mocha --reporter=spec */test.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm test"
-    }
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
