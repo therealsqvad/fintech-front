@@ -19,9 +19,9 @@
 // Have fun!
 
 function pickPeaks(arr) {
-  let pos = [],
-    peaks = [],
-    plat = [];
+  const pos = [];
+  const peaks = [];
+  let plat = [];
 
   for (let i = 1; i < arr.length; i++) {
     if (arr[i - 1] < arr[i] || (arr[i - 1] === arr[i] && plat.length > 0)) {
@@ -39,7 +39,6 @@ function pickPeaks(arr) {
       }
     }
   }
-
 
   return {
     pos,
@@ -75,7 +74,7 @@ function pickPeaks(arr) {
 //
 // The input data consist of an array which contains at least 1 name, and single integer n.
 //
-// (1 ≤ n ≤ 1000000000).
+// (1≤n≤1000000000).
 //
 // -------------------------
 // ##Output
@@ -91,14 +90,14 @@ function pickPeaks(arr) {
 // whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 7230702951)=="Leonard"
 
 function whoIsNext(names, r) {
-  let len = 0,
-    i = 0,
-    j = 0,
-    jMax = names.length - 1;
+  let len = 0;
+  let i = 0;
+  let j = 0;
+  const jMax = names.length - 1;
 
   r--;
-  while (len <= r) {
-    len += Math.pow(2, i);
+  while (len < r) {
+    len += 2 ** i;
     if (r < len) {
       break;
     } else if (j < jMax) {
@@ -111,6 +110,7 @@ function whoIsNext(names, r) {
 
   return names[j];
 }
+console.log(whoIsNext(['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard'], 15));
 
 module.exports = {
   pickPeaks,
